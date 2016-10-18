@@ -1,0 +1,9 @@
+---
+- name: Configure Cinder services.
+  service:
+    name:    '{{ item }}'
+    state:   started
+    enabled: yes
+  with_items:
+    - openstack-cinder-volume.service
+    - target.service
